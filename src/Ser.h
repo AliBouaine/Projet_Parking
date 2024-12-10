@@ -1,6 +1,7 @@
 #ifndef SERVICE_H_INCLUDED
 #define SERVICE_H_INCLUDED
 #include <stdio.h>
+#include <gtk/gtk.h>
 typedef struct
 {
     int id;
@@ -13,10 +14,18 @@ typedef struct
     char nom[50];
     float tarif;
 }reservation;
+enum{
+	ID ,
+	NOM ,
+	TARIF ,
+	COLUMNS,
+};
 
 int ajouter(char *, service , int*,char*);
-int modifier( char *, int, service );
+int modifier( char *, int, service ,int*,char*);
 int supprimer(char *, int );
-service chercher(char *, int);
+service chercher(char *, int ,char*);
 void affecterService(char *,char * ,int );
+void afficher_service (GtkWidget *liste,char ch[]);
+void supprimer_tre(service,char ch[] );
 #endif 

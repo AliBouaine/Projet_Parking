@@ -148,11 +148,6 @@ create_Espace_admin (void)
   GtkWidget *image1;
   GtkWidget *label8;
   GtkWidget *image29;
-  GtkWidget *button4_modifier4;
-  GtkWidget *alignment2;
-  GtkWidget *hbox2;
-  GtkWidget *image2;
-  GtkWidget *label9;
   GtkWidget *button5_supprimer5;
   GtkWidget *alignment3;
   GtkWidget *hbox3;
@@ -160,6 +155,11 @@ create_Espace_admin (void)
   GtkWidget *label10;
   GtkWidget *label7;
   GtkWidget *image35;
+  GtkWidget *button4_modifier4;
+  GtkWidget *alignment2;
+  GtkWidget *hbox2;
+  GtkWidget *image2;
+  GtkWidget *label9;
 
   Espace_admin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Espace_admin), _("Espace_admin"));
@@ -195,27 +195,6 @@ create_Espace_admin (void)
   gtk_widget_set_size_request (image29, 64, 56);
   gtk_misc_set_alignment (GTK_MISC (image29), 0.5, 0);
 
-  button4_modifier4 = gtk_button_new ();
-  gtk_widget_show (button4_modifier4);
-  gtk_fixed_put (GTK_FIXED (fixed2), button4_modifier4, 112, 136);
-  gtk_widget_set_size_request (button4_modifier4, 224, 29);
-
-  alignment2 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment2);
-  gtk_container_add (GTK_CONTAINER (button4_modifier4), alignment2);
-
-  hbox2 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox2);
-  gtk_container_add (GTK_CONTAINER (alignment2), hbox2);
-
-  image2 = gtk_image_new_from_stock ("gtk-preferences", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image2);
-  gtk_box_pack_start (GTK_BOX (hbox2), image2, FALSE, FALSE, 0);
-
-  label9 = gtk_label_new_with_mnemonic (_(" G\303\251rer les services"));
-  gtk_widget_show (label9);
-  gtk_box_pack_start (GTK_BOX (hbox2), label9, FALSE, FALSE, 0);
-
   button5_supprimer5 = gtk_button_new ();
   gtk_widget_show (button5_supprimer5);
   gtk_fixed_put (GTK_FIXED (fixed2), button5_supprimer5, 112, 184);
@@ -249,14 +228,35 @@ create_Espace_admin (void)
   gtk_widget_set_size_request (image35, 72, 56);
   gtk_misc_set_alignment (GTK_MISC (image35), 0.71, 0.71);
 
+  button4_modifier4 = gtk_button_new ();
+  gtk_widget_show (button4_modifier4);
+  gtk_fixed_put (GTK_FIXED (fixed2), button4_modifier4, 112, 136);
+  gtk_widget_set_size_request (button4_modifier4, 224, 29);
+
+  alignment2 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment2);
+  gtk_container_add (GTK_CONTAINER (button4_modifier4), alignment2);
+
+  hbox2 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox2);
+  gtk_container_add (GTK_CONTAINER (alignment2), hbox2);
+
+  image2 = gtk_image_new_from_stock ("gtk-preferences", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image2);
+  gtk_box_pack_start (GTK_BOX (hbox2), image2, FALSE, FALSE, 0);
+
+  label9 = gtk_label_new_with_mnemonic (_(" G\303\251rer les services"));
+  gtk_widget_show (label9);
+  gtk_box_pack_start (GTK_BOX (hbox2), label9, FALSE, FALSE, 0);
+
   g_signal_connect ((gpointer) button3_ajouter3, "clicked",
                     G_CALLBACK (on_button3_ajouter3_clicked),
                     NULL);
-  g_signal_connect ((gpointer) button4_modifier4, "clicked",
-                    G_CALLBACK (on_button4_modifier4_clicked),
-                    NULL);
   g_signal_connect ((gpointer) button5_supprimer5, "clicked",
                     G_CALLBACK (on_button5_supprimer5_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) button4_modifier4, "clicked",
+                    G_CALLBACK (on_button4_modifier4_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -268,11 +268,6 @@ create_Espace_admin (void)
   GLADE_HOOKUP_OBJECT (Espace_admin, image1, "image1");
   GLADE_HOOKUP_OBJECT (Espace_admin, label8, "label8");
   GLADE_HOOKUP_OBJECT (Espace_admin, image29, "image29");
-  GLADE_HOOKUP_OBJECT (Espace_admin, button4_modifier4, "button4_modifier4");
-  GLADE_HOOKUP_OBJECT (Espace_admin, alignment2, "alignment2");
-  GLADE_HOOKUP_OBJECT (Espace_admin, hbox2, "hbox2");
-  GLADE_HOOKUP_OBJECT (Espace_admin, image2, "image2");
-  GLADE_HOOKUP_OBJECT (Espace_admin, label9, "label9");
   GLADE_HOOKUP_OBJECT (Espace_admin, button5_supprimer5, "button5_supprimer5");
   GLADE_HOOKUP_OBJECT (Espace_admin, alignment3, "alignment3");
   GLADE_HOOKUP_OBJECT (Espace_admin, hbox3, "hbox3");
@@ -280,6 +275,11 @@ create_Espace_admin (void)
   GLADE_HOOKUP_OBJECT (Espace_admin, label10, "label10");
   GLADE_HOOKUP_OBJECT (Espace_admin, label7, "label7");
   GLADE_HOOKUP_OBJECT (Espace_admin, image35, "image35");
+  GLADE_HOOKUP_OBJECT (Espace_admin, button4_modifier4, "button4_modifier4");
+  GLADE_HOOKUP_OBJECT (Espace_admin, alignment2, "alignment2");
+  GLADE_HOOKUP_OBJECT (Espace_admin, hbox2, "hbox2");
+  GLADE_HOOKUP_OBJECT (Espace_admin, image2, "image2");
+  GLADE_HOOKUP_OBJECT (Espace_admin, label9, "label9");
 
   return Espace_admin;
 }
@@ -291,8 +291,8 @@ create_Sur (void)
   GtkWidget *fixed7;
   GtkWidget *radiobutton2_supp_ann;
   GSList *radiobutton2_supp_ann_group = NULL;
-  GtkWidget *alibouaine_label17;
   GtkWidget *radiobutton1_supp_conf;
+  GtkWidget *alibouaine_label17;
   GtkWidget *alibouaine_button10;
   GtkWidget *alignment23;
   GtkWidget *hbox23;
@@ -313,18 +313,18 @@ create_Sur (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton2_supp_ann), radiobutton2_supp_ann_group);
   radiobutton2_supp_ann_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton2_supp_ann));
 
-  alibouaine_label17 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\">Etes-vous sur de votre r\303\251ponse !?  </span>"));
-  gtk_widget_show (alibouaine_label17);
-  gtk_fixed_put (GTK_FIXED (fixed7), alibouaine_label17, 8, 16);
-  gtk_widget_set_size_request (alibouaine_label17, 320, 24);
-  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label17), TRUE);
-
   radiobutton1_supp_conf = gtk_radio_button_new_with_mnemonic (NULL, _("Supprimer"));
   gtk_widget_show (radiobutton1_supp_conf);
   gtk_fixed_put (GTK_FIXED (fixed7), radiobutton1_supp_conf, 128, 72);
   gtk_widget_set_size_request (radiobutton1_supp_conf, 116, 24);
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton1_supp_conf), radiobutton2_supp_ann_group);
   radiobutton2_supp_ann_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton1_supp_conf));
+
+  alibouaine_label17 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\">Etes-vous sur de votre r\303\251ponse !?  </span>"));
+  gtk_widget_show (alibouaine_label17);
+  gtk_fixed_put (GTK_FIXED (fixed7), alibouaine_label17, 8, 16);
+  gtk_widget_set_size_request (alibouaine_label17, 320, 24);
+  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label17), TRUE);
 
   alibouaine_button10 = gtk_button_new ();
   gtk_widget_show (alibouaine_button10);
@@ -347,6 +347,9 @@ create_Sur (void)
   gtk_widget_show (label64);
   gtk_box_pack_start (GTK_BOX (hbox23), label64, FALSE, FALSE, 0);
 
+  g_signal_connect ((gpointer) radiobutton2_supp_ann, "toggled",
+                    G_CALLBACK (on_radiobutton2_supp_ann_toggled),
+                    NULL);
   g_signal_connect ((gpointer) radiobutton1_supp_conf, "toggled",
                     G_CALLBACK (on_radiobutton1_supp_conf_toggled),
                     NULL);
@@ -358,8 +361,8 @@ create_Sur (void)
   GLADE_HOOKUP_OBJECT_NO_REF (Sur, Sur, "Sur");
   GLADE_HOOKUP_OBJECT (Sur, fixed7, "fixed7");
   GLADE_HOOKUP_OBJECT (Sur, radiobutton2_supp_ann, "radiobutton2_supp_ann");
-  GLADE_HOOKUP_OBJECT (Sur, alibouaine_label17, "alibouaine_label17");
   GLADE_HOOKUP_OBJECT (Sur, radiobutton1_supp_conf, "radiobutton1_supp_conf");
+  GLADE_HOOKUP_OBJECT (Sur, alibouaine_label17, "alibouaine_label17");
   GLADE_HOOKUP_OBJECT (Sur, alibouaine_button10, "alibouaine_button10");
   GLADE_HOOKUP_OBJECT (Sur, alignment23, "alignment23");
   GLADE_HOOKUP_OBJECT (Sur, hbox23, "hbox23");
@@ -384,15 +387,15 @@ create_Services (void)
   GtkWidget *alibouaine_label51;
   GtkWidget *alibouaine_label36;
   GtkWidget *alibouaine_label37;
-  GtkObject *spinbutton1_adj;
-  GtkWidget *spinbutton1;
+  GtkObject *spinbutton1_ali_adj;
+  GtkWidget *spinbutton1_ali;
   GtkWidget *ali_button3;
   GtkWidget *alignment26;
   GtkWidget *hbox26;
   GtkWidget *image44;
   GtkWidget *label68;
-  GtkWidget *alibouaine_checkbutton9;
   GtkWidget *alibouaine_checkbutton10;
+  GtkWidget *alibouaine_checkbutton9;
   GtkWidget *alibouaine_label31;
   GtkWidget *alibouaine_fixed11;
   GtkObject *alibouaine_spinbutton4_adj;
@@ -421,6 +424,7 @@ create_Services (void)
   GtkWidget *image26;
   GtkWidget *alibouaine_label53;
   GtkWidget *alibouaine_label44;
+  GtkWidget *ali_label71;
   GtkWidget *alibouaine_button17;
   GtkWidget *alignment7;
   GtkWidget *hbox7;
@@ -432,7 +436,7 @@ create_Services (void)
   GtkWidget *image21;
   GtkWidget *image25;
   GtkWidget *alibouaine_label46;
-  GtkWidget *button5;
+  GtkWidget *ali_button5;
   GtkWidget *alignment28;
   GtkWidget *hbox28;
   GtkWidget *image46;
@@ -521,11 +525,11 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label37, 80, 16);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label37), TRUE);
 
-  spinbutton1_adj = gtk_adjustment_new (1, 0, 100, 1, 10, 10);
-  spinbutton1 = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton1_adj), 1, 0);
-  gtk_widget_show (spinbutton1);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), spinbutton1, 224, 88);
-  gtk_widget_set_size_request (spinbutton1, 160, 27);
+  spinbutton1_ali_adj = gtk_adjustment_new (1, 0, 100, 1, 10, 10);
+  spinbutton1_ali = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton1_ali_adj), 1, 0);
+  gtk_widget_show (spinbutton1_ali);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), spinbutton1_ali, 224, 88);
+  gtk_widget_set_size_request (spinbutton1_ali, 160, 27);
 
   ali_button3 = gtk_button_new ();
   gtk_widget_show (ali_button3);
@@ -548,15 +552,15 @@ create_Services (void)
   gtk_widget_show (label68);
   gtk_box_pack_start (GTK_BOX (hbox26), label68, FALSE, FALSE, 0);
 
-  alibouaine_checkbutton9 = gtk_check_button_new_with_mnemonic (_("Esp\303\250ces"));
-  gtk_widget_show (alibouaine_checkbutton9);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_checkbutton9, 288, 264);
-  gtk_widget_set_size_request (alibouaine_checkbutton9, 118, 24);
-
   alibouaine_checkbutton10 = gtk_check_button_new_with_mnemonic (_("Carte bancaire"));
   gtk_widget_show (alibouaine_checkbutton10);
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_checkbutton10, 488, 264);
   gtk_widget_set_size_request (alibouaine_checkbutton10, 126, 24);
+
+  alibouaine_checkbutton9 = gtk_check_button_new_with_mnemonic (_("Esp\303\250ces"));
+  gtk_widget_show (alibouaine_checkbutton9);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_checkbutton9, 288, 264);
+  gtk_widget_set_size_request (alibouaine_checkbutton9, 118, 24);
 
   alibouaine_label31 = gtk_label_new (_("Ajouter un service"));
   gtk_widget_show (alibouaine_label31);
@@ -695,6 +699,11 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label44, 96, 24);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label44), TRUE);
 
+  ali_label71 = gtk_label_new (_("label71"));
+  gtk_widget_show (ali_label71);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), ali_label71, 208, 168);
+  gtk_widget_set_size_request (ali_label71, 225, 17);
+
   alibouaine_button17 = gtk_button_new ();
   gtk_widget_show (alibouaine_button17);
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), alibouaine_button17, 448, 208);
@@ -747,14 +756,14 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label46, 281, 32);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label46), TRUE);
 
-  button5 = gtk_button_new ();
-  gtk_widget_show (button5);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed12), button5, 560, 336);
-  gtk_widget_set_size_request (button5, 90, 29);
+  ali_button5 = gtk_button_new ();
+  gtk_widget_show (ali_button5);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed12), ali_button5, 560, 336);
+  gtk_widget_set_size_request (ali_button5, 90, 29);
 
   alignment28 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment28);
-  gtk_container_add (GTK_CONTAINER (button5), alignment28);
+  gtk_container_add (GTK_CONTAINER (ali_button5), alignment28);
 
   hbox28 = gtk_hbox_new (FALSE, 2);
   gtk_widget_show (hbox28);
@@ -859,6 +868,9 @@ create_Services (void)
   g_signal_connect ((gpointer) alibouaine_checkbutton10, "toggled",
                     G_CALLBACK (on_alibouaine_checkbutton10_toggled),
                     NULL);
+  g_signal_connect ((gpointer) alibouaine_checkbutton9, "toggled",
+                    G_CALLBACK (on_alibouaine_checkbutton9_toggled),
+                    NULL);
   g_signal_connect ((gpointer) ali_button4, "clicked",
                     G_CALLBACK (on_ali_button4_clicked),
                     NULL);
@@ -870,6 +882,12 @@ create_Services (void)
                     NULL);
   g_signal_connect ((gpointer) alibouaine_button17, "clicked",
                     G_CALLBACK (on_alibouaine_button17_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) alibouaine_treeview1, "row_activated",
+                    G_CALLBACK (on_alibouaine_treeview1_row_activated),
+                    NULL);
+  g_signal_connect ((gpointer) ali_button5, "clicked",
+                    G_CALLBACK (on_ali_button5_clicked),
                     NULL);
   g_signal_connect ((gpointer) ali_button18, "clicked",
                     G_CALLBACK (on_ali_button18_clicked),
@@ -888,14 +906,14 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label51, "alibouaine_label51");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label36, "alibouaine_label36");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label37, "alibouaine_label37");
-  GLADE_HOOKUP_OBJECT (Services, spinbutton1, "spinbutton1");
+  GLADE_HOOKUP_OBJECT (Services, spinbutton1_ali, "spinbutton1_ali");
   GLADE_HOOKUP_OBJECT (Services, ali_button3, "ali_button3");
   GLADE_HOOKUP_OBJECT (Services, alignment26, "alignment26");
   GLADE_HOOKUP_OBJECT (Services, hbox26, "hbox26");
   GLADE_HOOKUP_OBJECT (Services, image44, "image44");
   GLADE_HOOKUP_OBJECT (Services, label68, "label68");
-  GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton9, "alibouaine_checkbutton9");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton10, "alibouaine_checkbutton10");
+  GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton9, "alibouaine_checkbutton9");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label31, "alibouaine_label31");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_fixed11, "alibouaine_fixed11");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_spinbutton4, "alibouaine_spinbutton4");
@@ -922,6 +940,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, image26, "image26");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label53, "alibouaine_label53");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label44, "alibouaine_label44");
+  GLADE_HOOKUP_OBJECT (Services, ali_label71, "ali_label71");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_button17, "alibouaine_button17");
   GLADE_HOOKUP_OBJECT (Services, alignment7, "alignment7");
   GLADE_HOOKUP_OBJECT (Services, hbox7, "hbox7");
@@ -933,7 +952,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, image21, "image21");
   GLADE_HOOKUP_OBJECT (Services, image25, "image25");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label46, "alibouaine_label46");
-  GLADE_HOOKUP_OBJECT (Services, button5, "button5");
+  GLADE_HOOKUP_OBJECT (Services, ali_button5, "ali_button5");
   GLADE_HOOKUP_OBJECT (Services, alignment28, "alignment28");
   GLADE_HOOKUP_OBJECT (Services, hbox28, "hbox28");
   GLADE_HOOKUP_OBJECT (Services, image46, "image46");

@@ -56,3 +56,23 @@ on_ali_button18_clicked                (GtkButton       *button,
 void
 on_alibouaine_checkbutton9_toggled     (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_ali_button5_clicked                 (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_radiobutton2_supp_ann_toggled       (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_alibouaine_treeview1_row_activated  (GtkTreeView     *treeview,
+                                        GtkTreePath     *path,
+                                        GtkTreeViewColumn *column,
+                                        gpointer         user_data);
+
+void
+on_alibouaine_treeview1_row_activated  (GtkTreeView     *treeview,
+                                        GtkTreePath     *path,
+                                        GtkTreeViewColumn *column,
+                                        gpointer         user_data);

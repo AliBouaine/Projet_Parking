@@ -1,4 +1,1 @@
-1 'f ed /especes/ 
-2 d e /especes//carte_bancaire/ 
-3 dc c /carte_bancaire/ 
-4 lavage 20dt /especes//carte_bancaire/ 
+3 ll 44 /carte_bancaire/ 

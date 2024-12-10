@@ -291,8 +291,8 @@ create_Sur (void)
   GtkWidget *fixed7;
   GtkWidget *radiobutton2_supp_ann;
   GSList *radiobutton2_supp_ann_group = NULL;
-  GtkWidget *alibouaine_label17;
   GtkWidget *radiobutton1_supp_conf;
+  GtkWidget *alibouaine_label17;
   GtkWidget *alibouaine_button10;
   GtkWidget *alignment23;
   GtkWidget *hbox23;
@@ -313,18 +313,18 @@ create_Sur (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton2_supp_ann), radiobutton2_supp_ann_group);
   radiobutton2_supp_ann_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton2_supp_ann));
 
-  alibouaine_label17 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\">Etes-vous sur de votre r\303\251ponse !?  </span>"));
-  gtk_widget_show (alibouaine_label17);
-  gtk_fixed_put (GTK_FIXED (fixed7), alibouaine_label17, 8, 16);
-  gtk_widget_set_size_request (alibouaine_label17, 320, 24);
-  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label17), TRUE);
-
   radiobutton1_supp_conf = gtk_radio_button_new_with_mnemonic (NULL, _("Supprimer"));
   gtk_widget_show (radiobutton1_supp_conf);
   gtk_fixed_put (GTK_FIXED (fixed7), radiobutton1_supp_conf, 128, 72);
   gtk_widget_set_size_request (radiobutton1_supp_conf, 116, 24);
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton1_supp_conf), radiobutton2_supp_ann_group);
   radiobutton2_supp_ann_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton1_supp_conf));
+
+  alibouaine_label17 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\">Etes-vous sur de votre r\303\251ponse !?  </span>"));
+  gtk_widget_show (alibouaine_label17);
+  gtk_fixed_put (GTK_FIXED (fixed7), alibouaine_label17, 8, 16);
+  gtk_widget_set_size_request (alibouaine_label17, 320, 24);
+  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label17), TRUE);
 
   alibouaine_button10 = gtk_button_new ();
   gtk_widget_show (alibouaine_button10);
@@ -347,6 +347,9 @@ create_Sur (void)
   gtk_widget_show (label64);
   gtk_box_pack_start (GTK_BOX (hbox23), label64, FALSE, FALSE, 0);
 
+  g_signal_connect ((gpointer) radiobutton2_supp_ann, "toggled",
+                    G_CALLBACK (on_radiobutton2_supp_ann_toggled),
+                    NULL);
   g_signal_connect ((gpointer) radiobutton1_supp_conf, "toggled",
                     G_CALLBACK (on_radiobutton1_supp_conf_toggled),
                     NULL);
@@ -358,8 +361,8 @@ create_Sur (void)
   GLADE_HOOKUP_OBJECT_NO_REF (Sur, Sur, "Sur");
   GLADE_HOOKUP_OBJECT (Sur, fixed7, "fixed7");
   GLADE_HOOKUP_OBJECT (Sur, radiobutton2_supp_ann, "radiobutton2_supp_ann");
-  GLADE_HOOKUP_OBJECT (Sur, alibouaine_label17, "alibouaine_label17");
   GLADE_HOOKUP_OBJECT (Sur, radiobutton1_supp_conf, "radiobutton1_supp_conf");
+  GLADE_HOOKUP_OBJECT (Sur, alibouaine_label17, "alibouaine_label17");
   GLADE_HOOKUP_OBJECT (Sur, alibouaine_button10, "alibouaine_button10");
   GLADE_HOOKUP_OBJECT (Sur, alignment23, "alignment23");
   GLADE_HOOKUP_OBJECT (Sur, hbox23, "hbox23");
@@ -421,6 +424,7 @@ create_Services (void)
   GtkWidget *image26;
   GtkWidget *alibouaine_label53;
   GtkWidget *alibouaine_label44;
+  GtkWidget *ali_label71;
   GtkWidget *alibouaine_button17;
   GtkWidget *alignment7;
   GtkWidget *hbox7;
@@ -432,7 +436,7 @@ create_Services (void)
   GtkWidget *image21;
   GtkWidget *image25;
   GtkWidget *alibouaine_label46;
-  GtkWidget *button5;
+  GtkWidget *ali_button5;
   GtkWidget *alignment28;
   GtkWidget *hbox28;
   GtkWidget *image46;
@@ -695,6 +699,11 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label44, 96, 24);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label44), TRUE);
 
+  ali_label71 = gtk_label_new (_("label71"));
+  gtk_widget_show (ali_label71);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), ali_label71, 208, 168);
+  gtk_widget_set_size_request (ali_label71, 225, 17);
+
   alibouaine_button17 = gtk_button_new ();
   gtk_widget_show (alibouaine_button17);
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), alibouaine_button17, 448, 208);
@@ -747,14 +756,14 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label46, 281, 32);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label46), TRUE);
 
-  button5 = gtk_button_new ();
-  gtk_widget_show (button5);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed12), button5, 560, 336);
-  gtk_widget_set_size_request (button5, 90, 29);
+  ali_button5 = gtk_button_new ();
+  gtk_widget_show (ali_button5);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed12), ali_button5, 560, 336);
+  gtk_widget_set_size_request (ali_button5, 90, 29);
 
   alignment28 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment28);
-  gtk_container_add (GTK_CONTAINER (button5), alignment28);
+  gtk_container_add (GTK_CONTAINER (ali_button5), alignment28);
 
   hbox28 = gtk_hbox_new (FALSE, 2);
   gtk_widget_show (hbox28);
@@ -874,6 +883,12 @@ create_Services (void)
   g_signal_connect ((gpointer) alibouaine_button17, "clicked",
                     G_CALLBACK (on_alibouaine_button17_clicked),
                     NULL);
+  g_signal_connect ((gpointer) alibouaine_treeview1, "row_activated",
+                    G_CALLBACK (on_alibouaine_treeview1_row_activated),
+                    NULL);
+  g_signal_connect ((gpointer) ali_button5, "clicked",
+                    G_CALLBACK (on_ali_button5_clicked),
+                    NULL);
   g_signal_connect ((gpointer) ali_button18, "clicked",
                     G_CALLBACK (on_ali_button18_clicked),
                     NULL);
@@ -925,6 +940,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, image26, "image26");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label53, "alibouaine_label53");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label44, "alibouaine_label44");
+  GLADE_HOOKUP_OBJECT (Services, ali_label71, "ali_label71");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_button17, "alibouaine_button17");
   GLADE_HOOKUP_OBJECT (Services, alignment7, "alignment7");
   GLADE_HOOKUP_OBJECT (Services, hbox7, "hbox7");
@@ -936,7 +952,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, image21, "image21");
   GLADE_HOOKUP_OBJECT (Services, image25, "image25");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label46, "alibouaine_label46");
-  GLADE_HOOKUP_OBJECT (Services, button5, "button5");
+  GLADE_HOOKUP_OBJECT (Services, ali_button5, "ali_button5");
   GLADE_HOOKUP_OBJECT (Services, alignment28, "alignment28");
   GLADE_HOOKUP_OBJECT (Services, hbox28, "hbox28");
   GLADE_HOOKUP_OBJECT (Services, image46, "image46");
