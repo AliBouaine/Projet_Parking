@@ -16,11 +16,27 @@ void
 on_button1_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
-	GtkWidget *User_add,*Espace_admin;
+char mot1[20]="admin";
+char mot2[20]="admin123";
+char mot3[20]="citoyen";
+char mot4[20]="citoyen123";
+char login[20];
+char mdp[20];
+GtkWidget *input1,*input2;
+	GtkWidget *User_add,*Espace_admin,*Espace_citoyen;
 	User_add=lookup_widget(button,"User_add");
-	gtk_widget_destroy(User_add);
+input1=lookup_widget(button,"entry1_ali");
+input2=lookup_widget(button,"entry2_ali");
+strcpy(login,gtk_entry_get_text(GTK_ENTRY(input1)));
+strcpy(mdp,gtk_entry_get_text(GTK_ENTRY(input2)));
+if(strcmp(login,mot1)==0 && strcmp(mdp,mot2)==0 )
+	{gtk_widget_destroy(User_add);
 	Espace_admin=create_Espace_admin();
-	gtk_widget_show(Espace_admin);
+	gtk_widget_show(Espace_admin);}
+else if (strcmp(login,mot3)==0 && strcmp(mdp,mot4)==0 )
+{gtk_widget_destroy(User_add);
+	Espace_citoyen=create_Espace_citoyen();
+	gtk_widget_show(Espace_citoyen);}
 }
 
 
@@ -85,7 +101,8 @@ on_ali_button3_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
  char vide[2] = "";
-
+char mot1[50] = "Ajout avec succès";
+    char mot2[50] = "ECHEC d'ajout  ";
 GtkWidget *ch1,*ch2;
 
 
@@ -97,12 +114,13 @@ ch2=lookup_widget(button,"alibouaine_checkbutton10");
     service v;
     GtkWidget *input1, *input2, *input3 ;
     GtkWidget *Services;
+GtkWidget *output1 ;
 
     Services = lookup_widget(button, "Services");
     input1 = lookup_widget(button, "alibouaine_entry9");
     input2 = lookup_widget(button, "spinbutton1_ali");
     input3 = lookup_widget(button, "alibouaine_entry10");
-
+output1=lookup_widget(button,"label72_ali");
 
 strcpy(v.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
 v.id=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON (input2));
@@ -119,9 +137,12 @@ choix[1]=0;
                     gtk_entry_set_text(GTK_ENTRY(input3), vide);
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(ch1),FALSE);
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(ch2),FALSE);
-
+gtk_label_set_text(GTK_LABEL(output1), mot1);
 
      }
+else{
+gtk_label_set_text(GTK_LABEL(output1), mot2);
+}
 }
 
 
@@ -140,7 +161,8 @@ on_ali_button4_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
 char vide[2] = "";
-
+char mot1[50] = "ECHEC de modification !!!";
+char mot2[55] = "Modification avec succés";
 GtkWidget *ch1,*ch2;
 
 
@@ -152,13 +174,15 @@ ch2=lookup_widget(button,"alibouaine_checkbutton12");
     int id;
     service s;
     GtkWidget *input1, *input2, *input3 ;
+    GtkWidget *output1 ;
     GtkWidget *Services;
 
     Services = lookup_widget(button, "Services");
     input1 = lookup_widget(button, "alibouaine_entry11");
     input2 = lookup_widget(button, "alibouaine_spinbutton4");
     input3 = lookup_widget(button, "alibouaine_entry12");
-
+    output1=lookup_widget(button,"label71_ali");
+    
 
 strcpy(s.nom,gtk_entry_get_text(GTK_ENTRY(input1)));
 s.id=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON (input2));
@@ -175,9 +199,12 @@ choix[1]=0;
                     gtk_entry_set_text(GTK_ENTRY(input3), vide);
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(ch1),FALSE);
    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(ch2),FALSE);
+gtk_label_set_text(GTK_LABEL(output1), mot2);
 
 }
-
+else{
+gtk_label_set_text(GTK_LABEL(output1), mot1);
+}
 }
 void
 on_alibouaine_checkbutton12_toggled    (GtkToggleButton *togglebutton,
@@ -234,6 +261,17 @@ void
 on_ali_button18_clicked                (GtkButton       *button,
                                         gpointer         user_data)
 {
+	int id;
+	char chaine[5];
+	GtkWidget *Service;
+	GtkWidget *input2;
+	GtkWidget *combobox2;
+	Service=lookup_widget(button,"Services");
+	combobox2=lookup_widget(button, "ali_combobox2");
+        input2 = lookup_widget(button, "alibouaine_spinbutton6");
+	strcpy(chaine,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)));
+          id=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON (input2));
+ 	affecterService("reservations.txt","affecter.txt", id,chaine) ;
 
 }
 
@@ -292,5 +330,30 @@ GtkTreeIter iter;
                 supprimer_tre(s,ch);	
 		afficher_service(treeview,ch) ;
 }
+}
+
+
+void
+on_button1_ali_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *Services;
+GtkWidget *combobox2;
+GtkWidget *sortie1;
+char chaine[5];
+int id;
+Reservation res;
+
+combobox2=lookup_widget(button, "ali_combobox2");
+sortie1 = lookup_widget(button, "labelaffichage_ali");
+
+strcpy(chaine,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox2)));
+id=atoi(chaine);
+ res = chercher_res("reservations.txt",id );
+
+
+gtk_label_set_text(GTK_LABEL(sortie1), res.parkingSpot);
+
+
 }
 

@@ -1,1 +1,4 @@
-3 ll 44 /carte_bancaire/ 
+2 hffhfh 14 /carte_bancaire/ 
+3 ghgrrg 20 especes 
+4 fggf 66 especes 
+5 ddd 11 carte_bancaire 

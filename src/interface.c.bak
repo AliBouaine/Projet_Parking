@@ -142,17 +142,7 @@ create_Espace_admin (void)
 {
   GtkWidget *Espace_admin;
   GtkWidget *fixed2;
-  GtkWidget *button3_ajouter3;
-  GtkWidget *alignment1;
-  GtkWidget *hbox1;
-  GtkWidget *image1;
-  GtkWidget *label8;
   GtkWidget *image29;
-  GtkWidget *button5_supprimer5;
-  GtkWidget *alignment3;
-  GtkWidget *hbox3;
-  GtkWidget *image3;
-  GtkWidget *label10;
   GtkWidget *label7;
   GtkWidget *image35;
   GtkWidget *button4_modifier4;
@@ -160,6 +150,16 @@ create_Espace_admin (void)
   GtkWidget *hbox2;
   GtkWidget *image2;
   GtkWidget *label9;
+  GtkWidget *button3_ajouter3;
+  GtkWidget *alignment1;
+  GtkWidget *hbox1;
+  GtkWidget *image1;
+  GtkWidget *label8;
+  GtkWidget *button5_supprimer5;
+  GtkWidget *alignment3;
+  GtkWidget *hbox3;
+  GtkWidget *image3;
+  GtkWidget *label10;
 
   Espace_admin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Espace_admin), _("Espace_admin"));
@@ -168,53 +168,11 @@ create_Espace_admin (void)
   gtk_widget_show (fixed2);
   gtk_container_add (GTK_CONTAINER (Espace_admin), fixed2);
 
-  button3_ajouter3 = gtk_button_new ();
-  gtk_widget_show (button3_ajouter3);
-  gtk_fixed_put (GTK_FIXED (fixed2), button3_ajouter3, 112, 88);
-  gtk_widget_set_size_request (button3_ajouter3, 224, 29);
-
-  alignment1 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment1);
-  gtk_container_add (GTK_CONTAINER (button3_ajouter3), alignment1);
-
-  hbox1 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox1);
-  gtk_container_add (GTK_CONTAINER (alignment1), hbox1);
-
-  image1 = gtk_image_new_from_stock ("gtk-network", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image1);
-  gtk_box_pack_start (GTK_BOX (hbox1), image1, FALSE, FALSE, 0);
-
-  label8 = gtk_label_new_with_mnemonic (_(" G\303\251rer les parkings"));
-  gtk_widget_show (label8);
-  gtk_box_pack_start (GTK_BOX (hbox1), label8, FALSE, FALSE, 0);
-
   image29 = create_pixmap (Espace_admin, "tn.png");
   gtk_widget_show (image29);
   gtk_fixed_put (GTK_FIXED (fixed2), image29, 16, 8);
   gtk_widget_set_size_request (image29, 64, 56);
   gtk_misc_set_alignment (GTK_MISC (image29), 0.5, 0);
-
-  button5_supprimer5 = gtk_button_new ();
-  gtk_widget_show (button5_supprimer5);
-  gtk_fixed_put (GTK_FIXED (fixed2), button5_supprimer5, 112, 184);
-  gtk_widget_set_size_request (button5_supprimer5, 224, 29);
-
-  alignment3 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment3);
-  gtk_container_add (GTK_CONTAINER (button5_supprimer5), alignment3);
-
-  hbox3 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox3);
-  gtk_container_add (GTK_CONTAINER (alignment3), hbox3);
-
-  image3 = gtk_image_new_from_stock ("gtk-dialog-authentication", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image3);
-  gtk_box_pack_start (GTK_BOX (hbox3), image3, FALSE, FALSE, 0);
-
-  label10 = gtk_label_new_with_mnemonic (_(" G\303\251rer les agents"));
-  gtk_widget_show (label10);
-  gtk_box_pack_start (GTK_BOX (hbox3), label10, FALSE, FALSE, 0);
 
   label7 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\"> S\303\251l\303\251ctionner votre choix : </span>"));
   gtk_widget_show (label7);
@@ -249,30 +207,62 @@ create_Espace_admin (void)
   gtk_widget_show (label9);
   gtk_box_pack_start (GTK_BOX (hbox2), label9, FALSE, FALSE, 0);
 
+  button3_ajouter3 = gtk_button_new ();
+  gtk_widget_show (button3_ajouter3);
+  gtk_fixed_put (GTK_FIXED (fixed2), button3_ajouter3, 112, 88);
+  gtk_widget_set_size_request (button3_ajouter3, 224, 29);
+
+  alignment1 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment1);
+  gtk_container_add (GTK_CONTAINER (button3_ajouter3), alignment1);
+
+  hbox1 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox1);
+  gtk_container_add (GTK_CONTAINER (alignment1), hbox1);
+
+  image1 = gtk_image_new_from_stock ("gtk-network", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image1);
+  gtk_box_pack_start (GTK_BOX (hbox1), image1, FALSE, FALSE, 0);
+
+  label8 = gtk_label_new_with_mnemonic (_(" G\303\251rer les parkings"));
+  gtk_widget_show (label8);
+  gtk_box_pack_start (GTK_BOX (hbox1), label8, FALSE, FALSE, 0);
+
+  button5_supprimer5 = gtk_button_new ();
+  gtk_widget_show (button5_supprimer5);
+  gtk_fixed_put (GTK_FIXED (fixed2), button5_supprimer5, 112, 184);
+  gtk_widget_set_size_request (button5_supprimer5, 224, 29);
+
+  alignment3 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment3);
+  gtk_container_add (GTK_CONTAINER (button5_supprimer5), alignment3);
+
+  hbox3 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox3);
+  gtk_container_add (GTK_CONTAINER (alignment3), hbox3);
+
+  image3 = gtk_image_new_from_stock ("gtk-dialog-authentication", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image3);
+  gtk_box_pack_start (GTK_BOX (hbox3), image3, FALSE, FALSE, 0);
+
+  label10 = gtk_label_new_with_mnemonic (_(" G\303\251rer les agents"));
+  gtk_widget_show (label10);
+  gtk_box_pack_start (GTK_BOX (hbox3), label10, FALSE, FALSE, 0);
+
+  g_signal_connect ((gpointer) button4_modifier4, "clicked",
+                    G_CALLBACK (on_button4_modifier4_clicked),
+                    NULL);
   g_signal_connect ((gpointer) button3_ajouter3, "clicked",
                     G_CALLBACK (on_button3_ajouter3_clicked),
                     NULL);
   g_signal_connect ((gpointer) button5_supprimer5, "clicked",
                     G_CALLBACK (on_button5_supprimer5_clicked),
                     NULL);
-  g_signal_connect ((gpointer) button4_modifier4, "clicked",
-                    G_CALLBACK (on_button4_modifier4_clicked),
-                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (Espace_admin, Espace_admin, "Espace_admin");
   GLADE_HOOKUP_OBJECT (Espace_admin, fixed2, "fixed2");
-  GLADE_HOOKUP_OBJECT (Espace_admin, button3_ajouter3, "button3_ajouter3");
-  GLADE_HOOKUP_OBJECT (Espace_admin, alignment1, "alignment1");
-  GLADE_HOOKUP_OBJECT (Espace_admin, hbox1, "hbox1");
-  GLADE_HOOKUP_OBJECT (Espace_admin, image1, "image1");
-  GLADE_HOOKUP_OBJECT (Espace_admin, label8, "label8");
   GLADE_HOOKUP_OBJECT (Espace_admin, image29, "image29");
-  GLADE_HOOKUP_OBJECT (Espace_admin, button5_supprimer5, "button5_supprimer5");
-  GLADE_HOOKUP_OBJECT (Espace_admin, alignment3, "alignment3");
-  GLADE_HOOKUP_OBJECT (Espace_admin, hbox3, "hbox3");
-  GLADE_HOOKUP_OBJECT (Espace_admin, image3, "image3");
-  GLADE_HOOKUP_OBJECT (Espace_admin, label10, "label10");
   GLADE_HOOKUP_OBJECT (Espace_admin, label7, "label7");
   GLADE_HOOKUP_OBJECT (Espace_admin, image35, "image35");
   GLADE_HOOKUP_OBJECT (Espace_admin, button4_modifier4, "button4_modifier4");
@@ -280,6 +270,16 @@ create_Espace_admin (void)
   GLADE_HOOKUP_OBJECT (Espace_admin, hbox2, "hbox2");
   GLADE_HOOKUP_OBJECT (Espace_admin, image2, "image2");
   GLADE_HOOKUP_OBJECT (Espace_admin, label9, "label9");
+  GLADE_HOOKUP_OBJECT (Espace_admin, button3_ajouter3, "button3_ajouter3");
+  GLADE_HOOKUP_OBJECT (Espace_admin, alignment1, "alignment1");
+  GLADE_HOOKUP_OBJECT (Espace_admin, hbox1, "hbox1");
+  GLADE_HOOKUP_OBJECT (Espace_admin, image1, "image1");
+  GLADE_HOOKUP_OBJECT (Espace_admin, label8, "label8");
+  GLADE_HOOKUP_OBJECT (Espace_admin, button5_supprimer5, "button5_supprimer5");
+  GLADE_HOOKUP_OBJECT (Espace_admin, alignment3, "alignment3");
+  GLADE_HOOKUP_OBJECT (Espace_admin, hbox3, "hbox3");
+  GLADE_HOOKUP_OBJECT (Espace_admin, image3, "image3");
+  GLADE_HOOKUP_OBJECT (Espace_admin, label10, "label10");
 
   return Espace_admin;
 }
@@ -396,6 +396,7 @@ create_Services (void)
   GtkWidget *label68;
   GtkWidget *alibouaine_checkbutton10;
   GtkWidget *alibouaine_checkbutton9;
+  GtkWidget *label72_ali;
   GtkWidget *alibouaine_label31;
   GtkWidget *alibouaine_fixed11;
   GtkObject *alibouaine_spinbutton4_adj;
@@ -416,6 +417,7 @@ create_Services (void)
   GtkWidget *label69;
   GtkWidget *alibouaine_checkbutton12;
   GtkWidget *alibouaine_checkbutton11;
+  GtkWidget *label71_ali;
   GtkWidget *ali_label32;
   GtkWidget *alibouaine_fixed13;
   GtkObject *alibouaine_spinbutton5_adj;
@@ -424,12 +426,12 @@ create_Services (void)
   GtkWidget *image26;
   GtkWidget *alibouaine_label53;
   GtkWidget *alibouaine_label44;
-  GtkWidget *ali_label71;
   GtkWidget *alibouaine_button17;
   GtkWidget *alignment7;
   GtkWidget *hbox7;
   GtkWidget *image12;
   GtkWidget *label45;
+  GtkWidget *ali_label71;
   GtkWidget *alibouaine_label33;
   GtkWidget *alibouaine_fixed12;
   GtkWidget *alibouaine_treeview1;
@@ -446,7 +448,6 @@ create_Services (void)
   GtkWidget *alibouaine_combobox2;
   GtkObject *alibouaine_spinbutton6_adj;
   GtkWidget *alibouaine_spinbutton6;
-  GtkWidget *alibouaine_textview2;
   GtkWidget *alibouaine_label48;
   GtkWidget *alibouaine_label50;
   GtkWidget *alibouaine_label54;
@@ -458,6 +459,8 @@ create_Services (void)
   GtkWidget *hbox8;
   GtkWidget *image13;
   GtkWidget *label49;
+  GtkWidget *labelaffichage_ali;
+  GtkWidget *button1_ali;
   GtkWidget *alibouaine_label35;
 
   Services = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -562,6 +565,11 @@ create_Services (void)
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_checkbutton9, 288, 264);
   gtk_widget_set_size_request (alibouaine_checkbutton9, 118, 24);
 
+  label72_ali = gtk_label_new ("");
+  gtk_widget_show (label72_ali);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), label72_ali, 152, 312);
+  gtk_widget_set_size_request (label72_ali, 368, 25);
+
   alibouaine_label31 = gtk_label_new (_("Ajouter un service"));
   gtk_widget_show (alibouaine_label31);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (alibouaine_notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (alibouaine_notebook1), 0), alibouaine_label31);
@@ -661,6 +669,11 @@ create_Services (void)
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed11), alibouaine_checkbutton11, 216, 272);
   gtk_widget_set_size_request (alibouaine_checkbutton11, 126, 24);
 
+  label71_ali = gtk_label_new ("");
+  gtk_widget_show (label71_ali);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed11), label71_ali, 192, 320);
+  gtk_widget_set_size_request (label71_ali, 320, 24);
+
   ali_label32 = gtk_label_new (_("Modifier un service"));
   gtk_widget_show (ali_label32);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (alibouaine_notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (alibouaine_notebook1), 1), ali_label32);
@@ -699,11 +712,6 @@ create_Services (void)
   gtk_widget_set_size_request (alibouaine_label44, 96, 24);
   gtk_label_set_use_markup (GTK_LABEL (alibouaine_label44), TRUE);
 
-  ali_label71 = gtk_label_new (_("label71"));
-  gtk_widget_show (ali_label71);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), ali_label71, 208, 168);
-  gtk_widget_set_size_request (ali_label71, 225, 17);
-
   alibouaine_button17 = gtk_button_new ();
   gtk_widget_show (alibouaine_button17);
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), alibouaine_button17, 448, 208);
@@ -724,6 +732,11 @@ create_Services (void)
   label45 = gtk_label_new_with_mnemonic (_(" Supprimer "));
   gtk_widget_show (label45);
   gtk_box_pack_start (GTK_BOX (hbox7), label45, FALSE, FALSE, 0);
+
+  ali_label71 = gtk_label_new ("");
+  gtk_widget_show (ali_label71);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed13), ali_label71, 208, 168);
+  gtk_widget_set_size_request (ali_label71, 225, 17);
 
   alibouaine_label33 = gtk_label_new (_("Supprimer un service"));
   gtk_widget_show (alibouaine_label33);
@@ -796,11 +809,6 @@ create_Services (void)
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed14), alibouaine_spinbutton6, 200, 232);
   gtk_widget_set_size_request (alibouaine_spinbutton6, 60, 27);
 
-  alibouaine_textview2 = gtk_text_view_new ();
-  gtk_widget_show (alibouaine_textview2);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed14), alibouaine_textview2, 200, 160);
-  gtk_widget_set_size_request (alibouaine_textview2, 160, 34);
-
   alibouaine_label48 = gtk_label_new (_("<span color=\"LIGHTSEAGREEN\"font='11'weight='bold'>Le service\n demand\303\251 :</span>"));
   gtk_widget_show (alibouaine_label48);
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed14), alibouaine_label48, 24, 232);
@@ -858,6 +866,16 @@ create_Services (void)
   gtk_widget_show (label49);
   gtk_box_pack_start (GTK_BOX (hbox8), label49, FALSE, FALSE, 0);
 
+  labelaffichage_ali = gtk_label_new (_("label71"));
+  gtk_widget_show (labelaffichage_ali);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed14), labelaffichage_ali, 176, 168);
+  gtk_widget_set_size_request (labelaffichage_ali, 256, 25);
+
+  button1_ali = gtk_button_new_with_mnemonic (_("button1"));
+  gtk_widget_show (button1_ali);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed14), button1_ali, 504, 168);
+  gtk_widget_set_size_request (button1_ali, 66, 29);
+
   alibouaine_label35 = gtk_label_new (_("Affecter un service"));
   gtk_widget_show (alibouaine_label35);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (alibouaine_notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (alibouaine_notebook1), 4), alibouaine_label35);
@@ -892,6 +910,9 @@ create_Services (void)
   g_signal_connect ((gpointer) ali_button18, "clicked",
                     G_CALLBACK (on_ali_button18_clicked),
                     NULL);
+  g_signal_connect ((gpointer) button1_ali, "clicked",
+                    G_CALLBACK (on_button1_ali_clicked),
+                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (Services, Services, "Services");
@@ -914,6 +935,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, label68, "label68");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton10, "alibouaine_checkbutton10");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton9, "alibouaine_checkbutton9");
+  GLADE_HOOKUP_OBJECT (Services, label72_ali, "label72_ali");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label31, "alibouaine_label31");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_fixed11, "alibouaine_fixed11");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_spinbutton4, "alibouaine_spinbutton4");
@@ -933,6 +955,7 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, label69, "label69");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton12, "alibouaine_checkbutton12");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_checkbutton11, "alibouaine_checkbutton11");
+  GLADE_HOOKUP_OBJECT (Services, label71_ali, "label71_ali");
   GLADE_HOOKUP_OBJECT (Services, ali_label32, "ali_label32");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_fixed13, "alibouaine_fixed13");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_spinbutton5, "alibouaine_spinbutton5");
@@ -940,12 +963,12 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, image26, "image26");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label53, "alibouaine_label53");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label44, "alibouaine_label44");
-  GLADE_HOOKUP_OBJECT (Services, ali_label71, "ali_label71");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_button17, "alibouaine_button17");
   GLADE_HOOKUP_OBJECT (Services, alignment7, "alignment7");
   GLADE_HOOKUP_OBJECT (Services, hbox7, "hbox7");
   GLADE_HOOKUP_OBJECT (Services, image12, "image12");
   GLADE_HOOKUP_OBJECT (Services, label45, "label45");
+  GLADE_HOOKUP_OBJECT (Services, ali_label71, "ali_label71");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label33, "alibouaine_label33");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_fixed12, "alibouaine_fixed12");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_treeview1, "alibouaine_treeview1");
@@ -961,7 +984,6 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, alibouaine_fixed14, "alibouaine_fixed14");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_combobox2, "alibouaine_combobox2");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_spinbutton6, "alibouaine_spinbutton6");
-  GLADE_HOOKUP_OBJECT (Services, alibouaine_textview2, "alibouaine_textview2");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label48, "alibouaine_label48");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label50, "alibouaine_label50");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label54, "alibouaine_label54");
@@ -973,6 +995,8 @@ create_Services (void)
   GLADE_HOOKUP_OBJECT (Services, hbox8, "hbox8");
   GLADE_HOOKUP_OBJECT (Services, image13, "image13");
   GLADE_HOOKUP_OBJECT (Services, label49, "label49");
+  GLADE_HOOKUP_OBJECT (Services, labelaffichage_ali, "labelaffichage_ali");
+  GLADE_HOOKUP_OBJECT (Services, button1_ali, "button1_ali");
   GLADE_HOOKUP_OBJECT (Services, alibouaine_label35, "alibouaine_label35");
 
   return Services;
@@ -985,6 +1009,7 @@ create_Espace_citoyen (void)
   GtkWidget *alibouaine_fixed10;
   GtkWidget *image31;
   GtkWidget *image34;
+  GtkWidget *alibouaine_label57;
   GtkWidget *alibouaine_button17;
   GtkWidget *alignment19;
   GtkWidget *hbox19;
@@ -1000,7 +1025,6 @@ create_Espace_citoyen (void)
   GtkWidget *hbox21;
   GtkWidget *image33;
   GtkWidget *label60;
-  GtkWidget *alibouaine_label57;
 
   Espace_citoyen = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Espace_citoyen), _("Espace_citoyen"));
@@ -1020,6 +1044,12 @@ create_Espace_citoyen (void)
   gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), image34, 368, 16);
   gtk_widget_set_size_request (image34, 72, 56);
   gtk_misc_set_alignment (GTK_MISC (image34), 0.71, 0.71);
+
+  alibouaine_label57 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\"> S\303\251l\303\251ctionner votre choix : </span>"));
+  gtk_widget_show (alibouaine_label57);
+  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_label57, 80, 32);
+  gtk_widget_set_size_request (alibouaine_label57, 264, 25);
+  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label57), TRUE);
 
   alibouaine_button17 = gtk_button_new ();
   gtk_widget_show (alibouaine_button17);
@@ -1084,17 +1114,12 @@ create_Espace_citoyen (void)
   gtk_widget_show (label60);
   gtk_box_pack_start (GTK_BOX (hbox21), label60, FALSE, FALSE, 0);
 
-  alibouaine_label57 = gtk_label_new (_("<span foreground=\"#900000\"\nfont_desc=\"bold 15\"\nvariant=\"smallcaps\"> S\303\251l\303\251ctionner votre choix : </span>"));
-  gtk_widget_show (alibouaine_label57);
-  gtk_fixed_put (GTK_FIXED (alibouaine_fixed10), alibouaine_label57, 80, 32);
-  gtk_widget_set_size_request (alibouaine_label57, 264, 25);
-  gtk_label_set_use_markup (GTK_LABEL (alibouaine_label57), TRUE);
-
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (Espace_citoyen, Espace_citoyen, "Espace_citoyen");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, alibouaine_fixed10, "alibouaine_fixed10");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, image31, "image31");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, image34, "image34");
+  GLADE_HOOKUP_OBJECT (Espace_citoyen, alibouaine_label57, "alibouaine_label57");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, alibouaine_button17, "alibouaine_button17");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, alignment19, "alignment19");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, hbox19, "hbox19");
@@ -1110,7 +1135,6 @@ create_Espace_citoyen (void)
   GLADE_HOOKUP_OBJECT (Espace_citoyen, hbox21, "hbox21");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, image33, "image33");
   GLADE_HOOKUP_OBJECT (Espace_citoyen, label60, "label60");
-  GLADE_HOOKUP_OBJECT (Espace_citoyen, alibouaine_label57, "alibouaine_label57");
 
   return Espace_citoyen;
 }

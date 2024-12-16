@@ -76,3 +76,7 @@ on_alibouaine_treeview1_row_activated  (GtkTreeView     *treeview,
                                         GtkTreePath     *path,
                                         GtkTreeViewColumn *column,
                                         gpointer         user_data);
+
+void
+on_button1_ali_clicked                 (GtkButton       *button,
+                                        gpointer         user_data);

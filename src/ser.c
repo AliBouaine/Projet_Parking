@@ -1,4 +1,6 @@
 #include "Ser.h"
+#include<string.h>
+#include <stdio.h>
 int pull( int id){
    FILE *f = fopen("add.txt", "r");
     if (f != NULL)
@@ -24,11 +26,13 @@ int ajouter(char * filename, service s, int choix[], char ch[] )
 {
  strcpy(ch, "");
     if (choix[0] == 1)
-        strcat(ch, "especes");
+        strcat(ch, "especes/");
     if (choix[1] == 1)
-        strcat(ch, "carte_bancaire");
-
-
+        strcat(ch, "/carte_bancaire");
+for (int i=0 ;s.tarif[i] != '\0'; i++){
+if (s.tarif[i] < '0' || s.tarif[i] > '9') {
+return 0; }}
+ if (strcmp(s.nom,"")==0){return 0;}
     FILE * f=fopen(filename, "a+");
     if(f!=NULL)
     {
@@ -56,6 +60,12 @@ strcpy(ch, "");
         strcat(ch, "/especes/");
     if (choix[1] == 1)
         strcat(ch, "/carte_bancaire/");
+for (int i=0 ;nouv.tarif[i] != '\0'; i++){
+if (nouv.tarif[i] < '0' || nouv.tarif[i] > '9') {
+return 0 ;}
+}
+if (strcmp(nouv.nom,"")==0){return 0;}
+
     int tr=0;
     service s;
     FILE * f=fopen(filename, "r");
@@ -123,7 +133,26 @@ service chercher(char * filename, int id , char ch [])
         s.id=-1;
     return s;
 }
-void affecterService(char * servicefile,char * reservationfile ,int id) 
+Reservation chercher_res(char * filename, int id )
+{
+    Reservation r;
+    int tr=0;
+
+    FILE * f=fopen(filename, "r");
+    if(f!=NULL)
+    {
+        while(tr==0&& fscanf(f,"%d %d %s %s %s %d \n",&r.reservationID,&r.citoiyantid,r.date,r.createdDate,r.parkingSpot,&r.state)!=EOF)
+        {
+            if(r.reservationID==id)
+                tr=1;
+        }
+    }
+    fclose(f);
+    if(tr==0)
+        r.reservationID=-1;
+    return r;
+}
+void affecterService(char * servicefile,char * reservationfile ,int id,char chaine[5]) 
 {
     FILE * f = fopen(servicefile, "r");
     FILE * f2 = fopen(reservationfile, "a"); 
@@ -132,12 +161,13 @@ void affecterService(char * servicefile,char * reservationfile ,int id)
     {
     char ch[150];
     service s;
+
     int tr=0;
   while(tr==0&& fscanf(f,"%d %s %s %s \n",&s.id,s.nom,s.tarif,ch)!=EOF)
         {
             if(s.id== id){
                 tr=1;
-                fprintf(f2,"%d %s %s %s \n",s.id,s.nom,s.tarif,ch);}
+                fprintf(f2,"id de service : %d affecter a:%s \n",s.id,chaine);}
         }
     
     }
